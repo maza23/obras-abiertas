@@ -21,11 +21,11 @@ angular
     $scope.tipo_colors = function(d){
       var c = [];
        c["Espacio Público"] = "#A7C64D";
-       c["Escuelas"] = "#7874B2";
+       c["Cultura, Educativas y Sociales"] = "#7874B2";
        c["Salud"] = "#F1AD3C";
        c["Arquitectura"] = "#38A0D7";
-       c["Hidráulica e Infraestructura"] = "#BD3E93";
-       c["Transporte"] = "#E84D00";
+       c["Infraestructura"] = "#BD3E93";
+       c["Producción"] = "#E84D00";
        c["Vivienda"] = "#22B496";
 
       return c[d];
@@ -48,10 +48,10 @@ angular
     $scope.selectTypes.push(mainSelect)
     $scope.selectTypes.push({
       label: "Espacio Público",
-      slug: "espacio-publico"
+      slug: "espacios_publicos"
     })
     $scope.selectTypes.push({
-      label: "Escuelas",
+      label: "Cultura, Educativas y Sociales",
       slug: "escuelas"
     })
      $scope.selectTypes.push({
@@ -67,31 +67,31 @@ angular
       slug: "vivienda"
     })
       $scope.selectTypes.push({
-      label: "Transporte",
-      slug: "transporte"
+      label: "Producción",
+      slug: "produccion"
     })
 
   $scope.selectTypes.push({
       label: "Hidráulica e Infraestructura",
-      slug: "hidraulica-e-infraestructura"
+      slug: "infraestructura"
     })
 
 
 
-    $scope.labels["espacio-publico"] =
+    $scope.labels["espacios_publicos"] =
       "Obras e intervenciones en el espacio público, tales como obras en plazas y parques, en veredas o de regeneración urbana.";
     $scope.labels["escuelas"] =
       "Obras de construcción, refacción o puesta en valor de establecimientos educativos.";
     $scope.labels["arquitectura"] =
       "Obras civiles de reforma, puesta en valor o construcción de edificios.";
     $scope.labels["salud"] =
-      "Obras de construcción, remodelación y puesta en valor en hospitales y centros de salud y atención comunitaria..";
+      "Obras de construcción, remodelación y puesta en valor en centros de salud y atención comunitaria.";
     $scope.labels["vivienda"] =
       "Construcción de viviendas nuevas y obras de mejoras en viviendas existentes.";
-    $scope.labels["transporte"] =
-      "Obras de infraestructura destinadas al transporte público y a la construcción y mantenimiento de las vías de circulación. ";
-    $scope.labels["hidraulica-e-infraestructura"] =
-      "Comprende obras e intervenciones relacionadas con el tratamiento de fluidos (cursos de agua o desagües pluviales), así como obras de equipamiento, redes sanitarias, de gas o electricidad, necesarias para la vida en un entorno urbano.";
+    $scope.labels["produccion"] =
+      "Obras de infraestructura destinadas a la producción y desarrollo económico ";
+    $scope.labels["infraestructura"] =
+      "Comprende obras e intervenciones relacionadas con el tratamiento de fluidos (cursos de agua o desagües pluviales), así como obras de equipamiento, redes sanitarias necesarias para la vida en un entorno urbano.";
 
     $scope.selectedRadioDimension = "monto_contrato";
 
@@ -148,7 +148,7 @@ angular
 
       $scope.availableGroups = [
         { id: "mapa", name: "Mapa" },
-        { id: "comunas", name: $scope.useComunas ? "Comunas" : "Jurisdicciones" },
+        { id: "comunas", name: $scope.useComunas ? "Zonas" : "Jurisdicciones" },
         { id: "montos", name: "Inversión" },
         { id: "etapas", name: "Etapas" }
       ];
@@ -570,9 +570,9 @@ angular
       var comunas = [];
       var names = [];
       if ($scope.useComunas) {
-        comunas = d3.range(1, 16);
+        comunas = d3.range(1, 10);
         for (var i=0; i<comunas.length; i++) {
-          names[comunas[i]] = "Comuna " + comunas[i];
+          names[comunas[i]] = "Zona " + comunas[i];
         }
       } else {
         for (var j=0; j<$scope.obras.length; j++) {
@@ -1615,9 +1615,8 @@ angular
         if (cluster) {
           // For cluster nodes, apply custom gravity.
           if (cluster === d) {
-            if (bubbles.clusterPoints) {
+            if (bubbles.clusterPoints && bubbles.clusterPoints[d.cluster]) {
               cluster = bubbles.clusterPoints[d.cluster];
-
               cluster = {
                 x: cluster.x,
                 y: cluster.y,

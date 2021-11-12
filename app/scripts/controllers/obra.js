@@ -13,11 +13,11 @@ angular
     $scope.tipo_colors = function(d){
       var c = [];
        c["Espacio Público"] = "#A7C64D";
-       c["Escuelas"] = "#7874B2";
+       c["Cultura, Educativas y Sociales"] = "#7874B2";
        c["Salud"] = "#F1AD3C";
        c["Arquitectura"] = "#38A0D7";
-       c["Hidráulica e Infraestructura"] = "#BD3E93";
-       c["Transporte"] = "#E84D00";
+       c["Infraestructura"] = "#BD3E93";
+       c["Producción"] = "#E84D00";
        c["Vivienda"] = "#22B496";
 
       return c[d];

@@ -44,7 +44,7 @@ angular
               )
           )
           .map(function(c) {
-            return { id: c.trim(), title: "Comuna " + c };
+            return { id: c.trim(), title: "Zona " + c };
           }),
         etapas: d3
           .keys(
