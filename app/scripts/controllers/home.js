@@ -48,11 +48,11 @@ angular
     $scope.selectTypes.push(mainSelect)
     $scope.selectTypes.push({
       label: "Espacio Público",
-      slug: "espacios_publicos"
+      slug: "espacio-publico"
     })
     $scope.selectTypes.push({
       label: "Cultura, Educativas y Sociales",
-      slug: "escuelas"
+      slug: "cultura-educativas-y-sociales"
     })
      $scope.selectTypes.push({
       label: "Salud",
@@ -78,10 +78,10 @@ angular
 
 
 
-    $scope.labels["espacios_publicos"] =
+    $scope.labels["espacio-publico"] =
       "Obras e intervenciones en el espacio público, tales como obras en plazas y parques, en veredas o de regeneración urbana.";
-    $scope.labels["escuelas"] =
-      "Obras de construcción, refacción o puesta en valor de establecimientos educativos.";
+    $scope.labels["cultura-educativas-y-sociales"] =
+      "Obras de construcción, refacción o puesta en valor de establecimientos educativos, espacios culturales o sociales.";
     $scope.labels["arquitectura"] =
       "Obras civiles de reforma, puesta en valor o construcción de edificios.";
     $scope.labels["salud"] =
@@ -1587,7 +1587,8 @@ angular
         .transition()
         .style("opacity", 1)
         .attr("r", function(d) {
-          return d.radius;
+          console.log(d.radius);
+          return 10;//d.radius;
         });
 
       bubbles.circles.exit().remove();
