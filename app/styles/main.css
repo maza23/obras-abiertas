@@ -226,16 +226,22 @@ html {
     }
 }
 body {
-    font-family: "Varela Round", Helvetica, Arial, sans-serif;
+    font-family: "Ubuntu", Helvetica, Arial, sans-serif;
 }
 #stats-home h5,
 h4,
-p {
-    font-family: "Varela Round", Helvetica, Arial, sans-serif !important;
+p, h1, .h1, h2, .h2, h3, .h3 {
+    font-family: "Ubuntu", Helvetica, Arial, sans-serif !important;
 }
+.full-width {
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+}
+.bold{font-weight: bold;}
 #stats-home {
-    background-color: rgba(223, 220, 220, 0.6901960784313725);
-    padding: 20px 0;
+    /*background-color: rgba(223, 220, 220, 0.85);
+    padding: 20px 0;*/
 }
 #stats-home .col-custom-1-5 {
     padding: 0 15px;
@@ -260,7 +266,7 @@ p {
 #home-chart-container text.map-text,
 #selector-home .selector a span,
 #stats-home span.value {
-    font-family: "Varela Round", Helvetica, Arial, sans-serif;
+    font-family: "Ubuntu", Helvetica, Arial, sans-serif;
 }
 #stats-home .icon-container {
     padding-right: 0;
@@ -278,10 +284,21 @@ p {
     align-items: flex-start;
     justify-content: flex-end;
 }
+#stats-home h5{
+    font-size: 20px;
+}
 #stats-home span.value {
     display: block;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 400;
+}
+@media only screen and (max-width: 600px) {
+    #stats-home h5{
+        font-size: 15px;
+    }
+    #stats-home span.value {
+        font-size: 30px;
+    }
 }
 #selector-home {
     margin: 30px 0;
@@ -312,7 +329,7 @@ p {
     margin-bottom: 10px;
 }
 #selector-home .selectorSelected a {
-    border: 3px solid #95c840;
+    border: 3px solid #0ea6de;
 }
 #selector-home .selectorSelected img {
     filter: none;
@@ -346,7 +363,7 @@ p {
     transition: fill 0.5s ease;
 }
 #area-responsable-chart .main-group .click-rect {
-    fill: #95c840;
+    fill: #0ea6de;
     transition: fill-opacity 0.5s ease;
     fill-opacity: 0;
 }
@@ -355,12 +372,12 @@ p {
 }
 #area-responsable-chart #mini-chart.all .area-rect,
 #area-responsable-chart .main-group .area-rect.selected {
-    fill: #95c840;
+    fill: #0ea6de;
 }
 #home-chart-container path.comunas-item,
 #home-chart-container path.map-item,
 #home-chart-container path.montos-item {
-    fill: #AAA;
+    fill: #a5bfc9;
     stroke: #fff;
     stroke-width: 3px;
     cursor: pointer;
@@ -368,21 +385,21 @@ p {
 #home-chart-container path.comunas-item:hover,
 #home-chart-container path.map-item:hover,
 #home-chart-container path.montos-item:hover {
-    fill: #BCB;
-    cursor: zoom-in;
+    fill: #0ea6de;
+    cursor: pointer;
 }
 #home-chart-container path.comunas-item.active,
 #home-chart-container path.map-item.active,
 #home-chart-container path.montos-item.active {
-    fill: #e3e3e3;
-    cursor: zoom-out;
+    fill: #0ea6de;
+    cursor: pointer;
 }
 #home-chart-container circle.obra,
 .dropdown-menu a {
     cursor: pointer;
 }
 #home-chart-container text.map-text {
-    fill: #fff;
+    fill: #000;
     font-size: 40px;
     pointer-events: none;
 }
@@ -393,7 +410,7 @@ p {
 .chart-item h4 {
     text-align: right;
     margin-bottom: 20px;
-    font-family: "Varela Round", Helvetica, Arial, sans-serif !important;
+    font-family: "Ubuntu", Helvetica, Arial, sans-serif !important;
 }
 #tooltip-home-chart {
     position: absolute;
@@ -554,7 +571,7 @@ rect.comunas-item-frame,
 rect.etapas-item-frame,
 rect.montos-item-frame {
     fill: #eee;
-    cursor: zoom-in;
+    cursor: pointer;
 }
 rect.comunas-item-frame:hover,
 rect.etapas-item-frame:hover,
@@ -565,7 +582,7 @@ rect.comunas-item-frame.active,
 rect.etapas-item-frame.active,
 rect.montos-item-frame.active {
     fill: #e3e3e3;
-    cursor: zoom-out;
+    cursor: pointer;
 }
 #home-chart-container {
     width: 100%;
@@ -816,10 +833,10 @@ div.obra .ficha-tecnica .progress-bar {
 #tipo-chart-container .tipo-group.selected {
     background-color: #fff;
     border-radius: 5px;
-    border: 2px solid #95c840;
+    border: 2px solid #0ea6de;
 }
 span {
-    font-family: "Varela Round";
+    font-family: "Ubuntu";
     font-weight: 600;
 }
 div#tooltip-home-chart .title {
@@ -831,14 +848,22 @@ text#cabildo {
     font-size: 18px !important;
     fill: gray !important;
 }
-
-div#fondo {
+#fondo2{
+    background-color: #0ea6de;
+}
+.map-item{
+    fill: #0ea6de;
+}
+h1.titulo{
+    font-size: 46px;
+}
+/*div#fondo {
     background-image: url(/images/portada.jpg);
     background-size: cover;
 }
 div#fondo2 {
     background:lightsteelblue;
-}
+}*/
 div#footer {
     overflow: auto;
     background: #222;

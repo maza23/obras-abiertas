@@ -8,7 +8,6 @@
     "bootstrap": "^3.2.0",
     "angular-route": "1.6.1",
     "angular-sanitize": "1.6.1",
-    "BAstrap": "https://github.com/gcba/BAstrap.git#aee93cf71a4bbc6c731eed606f6cf620703f2579",
     "lodash": "^4.16.3",
     "d3": "3",
     "pym.js": "^1.1.1",
@@ -28,11 +27,6 @@
     "ng-youtube-embed": {
       "main": [
         "build/ng-youtube-embed.min.js"
-      ]
-    },
-    "BAstrap": {
-      "main": [
-        "bastrap.css"
       ]
     }
   },

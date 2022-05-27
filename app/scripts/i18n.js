@@ -4,7 +4,7 @@ window._i18n = {
   title: "Explorador de obras de SITE_NAME",
   subtitle: "Esta es la página de prueba para visualizar las obras de SITE_NAME. Click para ver página.",
 
-  homeTitle: "Observatorio de Obras",
+  homeTitle: "Obras de la ciudad en números",
   homeButton: "Home",
   searchButton: "Buscador",
 
@@ -64,7 +64,7 @@ window._i18n = {
 
   totalWorks: "Total de obras",
   ended: "Finalizadas",
-  employees: "Empleados",
+  employees: "Mano de obra",
 
   upTo50Millions: "Hasta 50 millones",
   from50To100Millions: "50  a 100 millones",

@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Explorador de obras del Ministerio de Desarrollo Urbano y Transporte</title>
+    <title>Mapa de obras de la Municipalidad de Gualeguaychú</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/BAstrap/bastrap.css" />
     <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="bower_components/flexslider/flexslider.css" />
     <!-- endbower -->
@@ -22,8 +24,12 @@
     <!-- endbuild -->
   </head>
   <body ng-app="obrasMduytApp">
-
-    <div class="container-fluid">
+    <div class="container-fluid" style=" background-color: #0ea6de;">
+      <div class="container">
+        <div class="row" style="padding: 10px 0;"> <div class="col-sm-12"> <a href="/"><img src="/images/logo.png" style="width:100%; max-width:180px;margin-left: 0px"></a> </div>  </div>
+      </div>
+    </div>
+    <div class="container">
       <div ng-view=""></div>
     </div>
 
@@ -46,7 +52,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script src="config.js"></script>
+    <script src="config.js?i=112"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/libs/d3.sankey.js"></script>

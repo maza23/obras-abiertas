@@ -4,8 +4,17 @@
     <div class="col-xs-12">
       <div class="row" ng-show='obras'>
         <div class="col-xs-12">
-          <h1 class="center ">{{ i18n.homeTitle }}</h1>
+
+
+          <h1 class="titulo center bold">Mapa de Obras</h1>
+          <h4 class="center ">Conocé las obras que cambiaron la ciudad desde 2016 en adelante</h4>
         </div>
+      </div>
+      <div class="row">
+        <img class="visible-xs img-responsive" src="/images/fondocel.jpg" > 
+        <div class="col-sm-12">
+           <img class="hidden-xs" src="/images/fondo.png" style="width:100%;margin-top: 15px;margin-bottom: 45px;"> 
+           </div> 
       </div>
     <div class='row'>
   <div class='col-xs-6'>
@@ -15,7 +24,7 @@
       </div>
       <div class='col-xs-9 col-md-8 value-container'>
         <h5>{{ i18n.investmentAmount }}:</h5>
-        <span class="value">{{totalRender.inversion | currency:$ :0}}</span>
+        <span class="value">{{totalRender.inversion/1000000 | currency:$ :0}}Mill.</span>
       </div>
     </div>
   </div>
@@ -30,8 +39,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class='row'>
+
   <div class='col-xs-6'>
     <div class="row">
       <div class='col-xs-3 col-md-4 icon-container'>
@@ -55,6 +63,7 @@
     </div>
   </div>
   </div>
+  
 </div>
 </div>
 </div>

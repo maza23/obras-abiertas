@@ -160,6 +160,7 @@ angular
       }, 1000);
       window.$(window).resize(function() {
         if (w != $(window).width()) {
+          w = $(window).width();
           clearTimeout($scope.timeoutId);
           $scope.timeoutId = setTimeout(function() {
             initialized = {
@@ -277,7 +278,7 @@ angular
       if ($scope.selectedFilter == filterSlug) {
         d3.selectAll("circle.obra").style("opacity", 1);
         d3.selectAll("g.banderita").style("opacity", 1);
-        filterSlug = false;
+        //filterSlug = false;
       }
       if (filterSlug == "" && $scope.textFilter == "") {
         d3.selectAll("circle.obra").style("opacity", 1);
@@ -311,6 +312,7 @@ angular
     $scope.changeGroup = function(group) {
       $scope.selectedGroup = group;
       $scope.showGroup();
+      
     };
 
     $scope.showGroup = function() {
@@ -340,6 +342,7 @@ angular
         prepareNodesFunctions[$scope.selectedGroup]();
         renderBubbles();
       }, time);
+      
     };
 
     /** MAPA Functions ====================================================== **/
@@ -382,6 +385,8 @@ angular
             })
             .style("opacity", 1)
             .style("display", "block");
+          
+            
         }
 
         if (!chart.mapGroup) {
@@ -407,6 +412,9 @@ angular
             .attr("id", function(d, i) {
               return "mapa-comuna-" + (d.properties && d.properties.comuna ? d.properties.comuna : i);
             })
+            .attr("fill", function(d, i) {
+              return "url(images/zonas/" + (d.properties && d.properties.comuna ? d.properties.comuna : i)+".svg')";
+            })
             .classed("shape", true)
             .on("click", clickedMap);
 
@@ -427,6 +435,8 @@ angular
             .text(function(d, i) {
               return d.properties && d.properties.comuna ? d.properties.comuna : '';
             });
+
+            
 
           updateMap();
         } else {
@@ -480,8 +490,9 @@ angular
       activeMap = d3.select(this).classed("active", true);
 
 
-      if($scope.isSmallDevice){
+      if(1==1 || $scope.isSmallDevice){
         // d3.selectAll('#bubbles-group').style('display',"block");
+        
           $scope.$apply(function(){
           $scope.showList = true;
           $scope.selectedComuna = d.properties && d.properties.comuna;
@@ -490,7 +501,15 @@ angular
            return $scope.selectedComuna ?
              parseInt(o.comuna) === parseInt($scope.selectedComuna) :
              o.jurisdiccion === $scope.selectedJurisdiccion;
-          })
+          });
+          
+
+          setTimeout(function(){
+            var itemToScrollTo = document.getElementById('obras-lista');
+            itemToScrollTo.scrollIntoView({ behavior: 'smooth' });
+          },1000);
+            
+          
         })
       }else {
 
@@ -1587,8 +1606,7 @@ angular
         .transition()
         .style("opacity", 1)
         .attr("r", function(d) {
-          console.log(d.radius);
-          return 10;//d.radius;
+          return d.radius*1.25;
         });
 
       bubbles.circles.exit().remove();
@@ -1693,7 +1711,6 @@ angular
 
 
     $scope.closeList = function(){
-
       $scope.showList = false;
       $scope.filteredObras = [];
       $scope.selectedComuna = "";
